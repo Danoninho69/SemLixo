@@ -11,5 +11,6 @@ namespace LixoMelhor.Services.Caminhao
 
         Task<ResponseModel<List<CaminhaoModel>>> EditarCaminhao(CaminhaoEdicaoDto caminhaoEdicaoDto);
         Task<ResponseModel<List<CaminhaoModel>>> ExcluirCaminhao(int idCaminhao);
+        List<CaminhaoModel> ListarCaminhoesList();
     }
 }

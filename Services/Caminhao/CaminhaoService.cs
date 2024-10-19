@@ -2,6 +2,7 @@
 using LixoMelhor.Dto.Caminhao;
 using LixoMelhor.Models;
 using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
 
 namespace LixoMelhor.Services.Caminhao
 {
@@ -160,6 +161,21 @@ namespace LixoMelhor.Services.Caminhao
                 resposta.Status = false;
                 return resposta;
             }
+        }
+
+        public List<CaminhaoModel> ListarCaminhoesList()
+        {
+            List<CaminhaoModel> caminhoes = new List<CaminhaoModel>();
+            try
+            {
+                caminhoes = _context.Caminhoes.ToList();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            return caminhoes;
         }
     }
 }

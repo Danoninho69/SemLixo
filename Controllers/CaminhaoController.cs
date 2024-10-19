@@ -15,12 +15,10 @@ namespace LixoMelhor.Controllers
             _caminhaoInterface = caminhaoInterface;
         }
 
-
         [HttpGet("ListarCaminhoes")]
-        public async Task<ActionResult<ResponseModel<List<CaminhaoModel>>>> ListarCaminhoes()
+        public ActionResult<IEnumerable<CaminhaoModel>> ListarCaminhoes()
         {
-            var caminhoes = await _caminhaoInterface.ListarCaminhoes();
-            return Ok(caminhoes);
+            return Ok(_caminhaoInterface.ListarCaminhoesList());
         }
 
         [HttpGet("BuscarCaminhaoPorId/{idCaminhao}")]
